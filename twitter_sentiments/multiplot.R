@@ -1,4 +1,5 @@
-multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) 
+  {
   require(grid)
   
   # Make a list from the ... arguments and plotlist
@@ -31,4 +32,4 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
       print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
                                       layout.pos.col = matchidx$col))
     }
-  }
+  }}

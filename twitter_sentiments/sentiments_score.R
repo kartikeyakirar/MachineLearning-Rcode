@@ -16,7 +16,7 @@ sentiments_score<-function(sentances,pos.wrd,neg.wrd)
       y<-NA  
       err<-tryCatch(tolower(sen),error = function(e) e)
       if(!inherits(err , "error"))
-        y<-tolower(x)
+        y<-tolower(sen)
       return(y)
     }
     sentance<-sapply(sentance,tryLower)
@@ -24,7 +24,7 @@ sentiments_score<-function(sentances,pos.wrd,neg.wrd)
     words<-unlist(word.list)
     pos.match<-!is.na(match(words,pos.wrd))
     neg.match<-!is.na(match(words,neg.wrd))
-    score<-sum(pos.wrd)-sum(neg.wrd)
+    score<-sum(pos.match)-sum(neg.match)
     return(score)
     
   },pos.wrd,neg.wrd)
